@@ -1,0 +1,296 @@
+<!-- 1/27/20 validated html, css, js. Now adding semantic tags and BEM styling, then planning on editing CSS to match. ~ Warren -->
+<!-- 2/2/20 styling is completely done now working on js dom function to update inner html onclick -->
+<!-- 2/3/20 style is extra done have js function for point up for light and dark teams now need to figure out how to detract points -->
+<!-- 2/3/20 10pm est just finished up let me know if i can do anything else -->
+<!DOCTYPE html> 
+<html lang="en-US"> 
+<head>
+<title>Scoreboard</title>
+<style> 
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-size: 10px;
+	}
+
+	.scoreboard {
+		margin: 2rem 0 0 4rem;
+		border: 1px solid black;
+		color: white;
+		background: linear-gradient(to bottom right, black, white);
+		height: 95vh;
+		width: 95vw;
+	}
+
+	.scoreboard__title {
+		position: absolute;
+		left: 6rem;
+		top: 3rem;
+		font-size: 3rem;
+	}
+
+	#scoreboard-controls {
+		position: absolute;
+		top: 55%;
+		left: 27.5%;
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.scoreboard__start {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	.scoreboard__stop {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	.scoreboard__timer {
+		background: black;
+		color: red;
+		position: absolute;
+		top: 30%;
+		left: 27.5%;
+		height: 25vh;
+		width: 15vw;
+	}
+
+	#light-score {
+		background: black;
+		color: red;
+		font-size: 5rem;
+		padding-top: 7.5rem;
+		padding-left: 13.15rem;
+		position: absolute;
+		top: 30%;
+		left: 42.5%;
+		height: 25vh;
+		width: 15vw;
+		margin: auto;
+	}
+
+	#dark-score {
+		background: black;
+		color: red;
+		font-size: 5rem;
+		padding-top: 7.5rem;
+		padding-left: 13.15rem;
+		position: absolute;
+		top: 30%;
+		left: 57.5%;
+		height: 25vh;
+		width: 15vw;
+		margin: auto;
+	}
+
+	#light-up {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	#light-down {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	#dark-up {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	#dark-down {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+	}
+
+	.scoreboard__light-team {
+		position: absolute;
+		top: 25%;
+		left: 46.25%;
+		display: inline-block;
+		padding: 1rem;
+		font-size: 2.5rem;
+	}
+
+	.scoreboard__dark-team {
+		position: absolute;
+		top: 25%;
+		left: 61.25%;
+		display: inline-block;
+		font-size: 2.5rem;
+		padding: 1rem;
+	}
+
+	.scoreboard__records {
+		display: block;
+		position: absolute;
+		bottom: 10%;
+		left: 5%;
+		font-size: 2rem;
+	}
+
+	button:hover {
+		cursor: pointer;
+		color: white;
+		background: black;
+	}
+
+</style>
+</head> 
+<body> 
+
+<div class="scoreboard">
+	<h1 class="scoreboard__title">
+		Scoreboard of Light and Darkness
+	</h1>
+
+	<div class="scoreboard__timer">
+	</div>
+	<div class="scoreboard__score">
+		<p id="light-score"></p>
+	</div>
+	<div class="scoreboard__score">
+		<p id="dark-score"></p>
+	</div>
+
+
+	<div id="scoreboard-controls">
+	<button class="scoreboard__start scoreboard__button">
+		<!-- <p class="scoreboard__text"> -->
+		Start Time
+		<!-- </p> -->
+	</button>
+	<button class ="scoreboard__stop scoreboard__button">
+		<!-- <p class="scoreboard__text"> -->
+		Stop Time
+		<!-- </p> -->
+	</button>
+	
+<!-- <form action="C:/Users/warre/Downloads/score.js" id="score-form" method="POST"> -->
+	<button id="light-up" class="scoreboard__light-up up"> 
+	<!-- <p class="scoreboard__text"> -->
+	Light Up
+	<!-- </p> -->
+</button>
+<button id="light-down" class="scoreboard__light-down down">
+	<!-- <p class="scoreboard__text"> -->
+	Light Down
+	<!-- </p> -->
+</button>
+
+
+<button id="dark-up" class="scoreboard__dark-up up">
+	<!-- <p class="scoreboard__text"> -->
+	Dark Up
+	<!-- </p> -->
+</button>
+<button id="dark-down" class="scoreboard__dark-down down">
+	<!-- <p class="scoreboard__text"> -->
+	Dark Down
+	<!-- </p> -->
+</button>
+</div>
+<!-- <output form="score-form" name="score" for="light-team dark-team"></output> -->
+<!-- </form> -->
+
+<!-- <div id="scoreboard__light">
+</div> -->
+	<h2 class="scoreboard__light-team">
+		 Light Team
+	</h2> 
+<!-- <div id="scoreboard__dark">
+</div> -->
+	<h2 class="scoreboard__dark-team">
+		Dark Team
+	</h2>
+<form class="scoreboard__records" action="/score_records.js" method="POST">
+	<label class="scoreboard__records-label" for="Light-Team-darkTotal">
+		<input id="Light-Team-darkTotal" class="scoreboard__records-light-team" type="number">
+		Light Team
+	</label>
+	<input class="scoreboard__records-submit" type="submit">
+	<label class="scoreboard_records-label" for="Dark-Team-darkTotal">
+		<input id="Dark-Team-darkTotal" class="scoreboard__records-dark-team" type="number">
+		Dark Team
+	</label>
+	<input class="scoreboard__records-submit" type="submit">	
+</form>
+</div>
+<script> 
+	// script for timer counting up 1/27/20
+	//     var timerVar = setInterval(countTimer, 1000);
+	//     var darkTotalSeconds = 0;
+	//     function countTimer() {
+	// 		for (darkTotalSeconds = 0; darkTotalSeconds < 10000; darkTotalSeconds++) {
+	// 	   var hour = Math.floor(darkTotalSeconds/3600);
+	//        var minute = Math.floor((darkTotalSeconds - hour*3600)/60);
+	// 	   var seconds = darkTotalSeconds - (hour*3600 + minute*60);
+	// 	   var time = document.getElementById("scoreboard__timer").innerHTML = minute + ':' + seconds;
+		
+	//     	 if (minute < 10) {
+	// 		 minute = "0" + minute;
+	// 		}
+	//        	else if (seconds < 10) {
+	// 		seconds = "0" + seconds;
+	// 	   }
+	// 		time;
+	// 	}
+	// }
+	
+		document.getElementById("light-up").addEventListener("click", lightUp);
+		document.getElementById("light-down").addEventListener("click", lightDown);
+		document.getElementById("dark-up").addEventListener("click", darkUp);
+		document.getElementById("dark-down").addEventListener("click", darkDown);
+
+		var lightUpClicks = 0;
+		var darkUpClicks = 0;
+		
+		
+
+		function lightUp() {
+			lightUpClicks = parseInt(lightUpClicks) + parseInt(1);
+			var lightScore = document.getElementById("light-score");
+			lightScore.innerHTML = lightUpClicks;
+		}
+
+		function darkUp() {
+			darkUpClicks = parseInt(darkUpClicks) + parseInt(1);
+			var darkScore = document.getElementById("dark-score");
+			darkScore.innerHTML = darkUpClicks;
+		}
+
+		function lightDown() {
+			var lightDownClicks = lightUpClicks -= 1;
+			var lightScore = document.getElementById("light-score");
+			lightScore.innerHTML = lightDownClicks;
+		}
+
+		function darkDown() {
+			var darkDownClicks = darkUpClicks -= 1;
+			var darkScore = document.getElementById("dark-score");
+			darkScore.innerHTML = darkDownClicks;
+		}
+
+
+		</script> 
+	</body> 
+	</html>
