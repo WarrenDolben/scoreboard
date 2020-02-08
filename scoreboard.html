@@ -2,7 +2,7 @@
 <!-- 2/2/20 styling is completely done now working on js dom function to update inner html onclick -->
 <!-- 2/3/20 style is extra done have js function for point up for light and dark teams now need to figure out how to detract points -->
 <!-- 2/3/20 10pm est just finished up let me know if i can do anything else -->
-<!-- 2/8/20 1230am est finished up media queries and put on codepend and committed to github, we're famous now -->
+<!-- 2/8/20 1230am est finished up media queries and put on codepen and committed to github, we're famous now -->
 <!DOCTYPE html> 
 <html lang="en-US"> 
 <head>
@@ -186,7 +186,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	.scoreboard__stop {
@@ -194,7 +194,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	.scoreboard__timer {
@@ -240,7 +240,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	#light-down {
@@ -248,7 +248,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	#dark-up {
@@ -256,7 +256,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	#dark-down {
@@ -264,7 +264,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .7rem;
+    	font-size: .7rem;
 	}
 
 	.scoreboard__light-team {
@@ -295,18 +295,18 @@
 }
 @media only screen and (max-width: 40rem) {
   .scoreboard {
-		margin: 1rem 0 0 1.5rem;
+		margin: 0;
 		border: 1px solid black;
 		color: white;
 		background: linear-gradient(to bottom right, black, white);
-		height: 95vh;
-		width: 95vw;
+		height: 100vh;
+		width: 100vw;
 	}
 
 	.scoreboard__title {
 		position: absolute;
-		left: 6rem;
-		top: 3rem;
+		left: 4rem;
+		top: 2.5rem;
 		font-size: 1rem;
 	}
 
@@ -324,7 +324,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .5rem;
+    	font-size: .5rem;
 	}
 
 	.scoreboard__stop {
@@ -349,8 +349,8 @@
 		background: black;
 		color: red;
 		font-size: 2rem;
-		padding-top: 3rem;
-		padding-left: 3.3rem;
+		padding-top: 1rem;
+		padding-left: 1.75rem;
 		position: absolute;
 		top: 32.5%;
 		left: 45%;
@@ -363,8 +363,8 @@
 		background: black;
 		color: red;
 		font-size: 2rem;
-		padding-top: 3rem;
-		padding-left: 3.4rem;
+		padding-top: 1rem;
+		padding-left: 1.75rem;
 		position: absolute;
 		top: 32.5%;
 		left: 60%;
@@ -378,7 +378,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .5rem;
+    	font-size: .5rem;
 	}
 
 	#light-down {
@@ -394,7 +394,7 @@
 		height: 20px;
 		margin: auto;
 		padding: 0.2rem;
-    font-size: .5rem;
+    	font-size: .5rem;
 	}
 
 	#dark-down {
@@ -407,30 +407,31 @@
 
 	.scoreboard__light-team {
 		position: absolute;
-		top: 25%;
-		left: 47.5%;
+		top: 20%;
+		left: 42.5%;
 		display: inline-block;
 		padding: 1rem;
-		font-size: 1rem;
+		font-size: .7rem;
 	}
 
 	.scoreboard__dark-team {
 		position: absolute;
-		top: 25%;
-		left: 60%;
+		top: 20%;
+		left: 57.5%;
 		display: inline-block;
-		font-size: 1rem;
+		font-size: .7rem;
 		padding: 1rem;
 	}
 
 	.scoreboard__records {
 		display: inline-block;
 		position: absolute;
-    width: 60vw;
+    	width: 10vw;
+    	height: 5vh;
 		bottom: 10%;
 		left: 5%;
-		font-size: 1rem;
-    margin: 1rem;
+		font-size: .7rem;
+    	margin: 0 0 7rem 1rem;
 	}
 }
 </style>
