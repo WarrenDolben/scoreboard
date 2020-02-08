@@ -2,12 +2,13 @@
 <!-- 2/2/20 styling is completely done now working on js dom function to update inner html onclick -->
 <!-- 2/3/20 style is extra done have js function for point up for light and dark teams now need to figure out how to detract points -->
 <!-- 2/3/20 10pm est just finished up let me know if i can do anything else -->
+<!-- 2/8/20 1230am est finished up media queries and put on codepend and committed to github, we're famous now -->
 <!DOCTYPE html> 
 <html lang="en-US"> 
 <head>
 <title>Scoreboard</title>
 <style> 
-	* {
+* {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
@@ -70,7 +71,7 @@
 		background: black;
 		color: red;
 		font-size: 5rem;
-		padding-top: 7.5rem;
+		padding-top: 2.5rem;
 		padding-left: 13.15rem;
 		position: absolute;
 		top: 30%;
@@ -84,7 +85,7 @@
 		background: black;
 		color: red;
 		font-size: 5rem;
-		padding-top: 7.5rem;
+		padding-top: 2.5rem;
 		padding-left: 13.15rem;
 		position: absolute;
 		top: 30%;
@@ -124,7 +125,7 @@
 
 	.scoreboard__light-team {
 		position: absolute;
-		top: 25%;
+		top: 20%;
 		left: 46.25%;
 		display: inline-block;
 		padding: 1rem;
@@ -133,7 +134,7 @@
 
 	.scoreboard__dark-team {
 		position: absolute;
-		top: 25%;
+		top: 20%;
 		left: 61.25%;
 		display: inline-block;
 		font-size: 2.5rem;
@@ -154,6 +155,284 @@
 		background: black;
 	}
 
+@media only screen and (max-width: 60rem) {
+  .scoreboard {
+		margin: 1rem 0 0 2rem;
+		border: 1px solid black;
+		color: white;
+		background: linear-gradient(to bottom right, black, white);
+		height: 95vh;
+		width: 95vw;
+	}
+
+	.scoreboard__title {
+		position: absolute;
+		left: 6rem;
+		top: 3rem;
+		font-size: 2rem;
+	}
+
+	#scoreboard-controls {
+		position: absolute;
+		top: 50%;
+		left: 30%;
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.scoreboard__start {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	.scoreboard__stop {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	.scoreboard__timer {
+		background: black;
+		color: red;
+		position: absolute;
+		top: 30%;
+		left: 30%;
+		height: 20vh;
+		width: 12.5vw;
+	}
+
+	#light-score {
+		background: black;
+		color: red;
+		font-size: 4rem;
+		padding-top: 2.5rem;
+		padding-left: 4.75rem;
+		position: absolute;
+		top: 30%;
+		left: 42%;
+		height: 20vh;
+		width: 12.5vw;
+		margin: auto;
+	}
+
+	#dark-score {
+		background: black;
+		color: red;
+		font-size: 4rem;
+		padding-top: 2.5rem;
+		padding-left: 5rem;
+		position: absolute;
+		top: 30%;
+		left: 54%;
+		height: 20vh;
+		width: 12.5vw;
+		margin: auto;
+	}
+
+	#light-up {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	#light-down {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	#dark-up {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	#dark-down {
+		width: 6.1vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .7rem;
+	}
+
+	.scoreboard__light-team {
+		position: absolute;
+		top: 20%;
+		left: 43.5%;
+		display: inline-block;
+		padding: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.scoreboard__dark-team {
+		position: absolute;
+		top: 20%;
+		left: 56%;
+		display: inline-block;
+		font-size: 1.5rem;
+		padding: 1rem;
+	}
+
+	.scoreboard__records {
+		display: block;
+		position: absolute;
+		bottom: 10%;
+		left: 5%;
+		font-size: 1.5rem;
+	}
+}
+@media only screen and (max-width: 40rem) {
+  .scoreboard {
+		margin: 1rem 0 0 1.5rem;
+		border: 1px solid black;
+		color: white;
+		background: linear-gradient(to bottom right, black, white);
+		height: 95vh;
+		width: 95vw;
+	}
+
+	.scoreboard__title {
+		position: absolute;
+		left: 6rem;
+		top: 3rem;
+		font-size: 1rem;
+	}
+
+	#scoreboard-controls {
+		position: absolute;
+		top: 50%;
+		left: 30%;
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.scoreboard__start {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	.scoreboard__stop {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	.scoreboard__timer {
+		background: black;
+		color: red;
+		position: absolute;
+		top: 32.5%;
+		left: 30%;
+		height: 20vh;
+		width: 15vw;
+	}
+
+	#light-score {
+		background: black;
+		color: red;
+		font-size: 2rem;
+		padding-top: 3rem;
+		padding-left: 3.3rem;
+		position: absolute;
+		top: 32.5%;
+		left: 45%;
+		height: 20vh;
+		width: 15vw;
+		margin: auto;
+	}
+
+	#dark-score {
+		background: black;
+		color: red;
+		font-size: 2rem;
+		padding-top: 3rem;
+		padding-left: 3.4rem;
+		position: absolute;
+		top: 32.5%;
+		left: 60%;
+		height: 20vh;
+		width: 15vw;
+		margin: auto;
+	}
+
+	#light-up {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	#light-down {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	#dark-up {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	#dark-down {
+		width: 7.5vw;
+		height: 20px;
+		margin: auto;
+		padding: 0.2rem;
+    font-size: .5rem;
+	}
+
+	.scoreboard__light-team {
+		position: absolute;
+		top: 25%;
+		left: 47.5%;
+		display: inline-block;
+		padding: 1rem;
+		font-size: 1rem;
+	}
+
+	.scoreboard__dark-team {
+		position: absolute;
+		top: 25%;
+		left: 60%;
+		display: inline-block;
+		font-size: 1rem;
+		padding: 1rem;
+	}
+
+	.scoreboard__records {
+		display: inline-block;
+		position: absolute;
+    width: 60vw;
+		bottom: 10%;
+		left: 5%;
+		font-size: 1rem;
+    margin: 1rem;
+	}
+}
 </style>
 </head> 
 <body> 
